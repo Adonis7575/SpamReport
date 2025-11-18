@@ -1,0 +1,5 @@
+Model,Accuracy
+Random Forest,0.9558
+Logistic Regression,0.9283
+Decision Tree,0.8921
+Naive Bayes,0.824
