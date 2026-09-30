@@ -235,8 +235,10 @@ safe to share.
   1–2-grams, sublinear TF, `min_df=2`, `max_features` tuned (default 200k).
   URLs, email addresses and numbers are normalized to tokens (`__url__`,
   `__email__`, `__num__`); URL domains are kept as tokens.
-- **Char TF-IDF** (3–5 char_wb n-grams) on `subject` + first 5,000 characters
-  of `text`, for obfuscations like `V1agra` and `fr€e`.
+- **Char TF-IDF** (3–5 char_wb n-grams) on `subject` + first 2,000 characters
+  of `text`, for obfuscations like `V1agra` and `fr€e`. (Reduced from 5,000
+  during planning: per-fold char n-grams over ~39k emails were too slow for
+  the "minutes, not hours" requirement on a laptop CPU.)
 - **Header tokens** (when present): From domain, Reply-To domain, mailer/
   X-Mailer family, Content-Type, as categorical tokens.
 - **Structural numerics** (scaled): URL count, distinct URL domains,
