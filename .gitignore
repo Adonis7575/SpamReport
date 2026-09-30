@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.superpowers/
+
+# Never commit real mail or models trained on it
+*.mbox
+*.pst
+*.eml
+*.model

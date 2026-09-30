@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spamfilter"
+version = "0.1.0"
+description = "Local, personalizable spam filter trained on public corpora and your own mail exports"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.14",
+    "pandas>=2.2",
+    "scikit-learn>=1.6",
+    "joblib>=1.4",
+]
+
+[project.optional-dependencies]
+pst = ["libpff-python>=20231205"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+spamfilter = "spamfilter.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spamfilter*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
